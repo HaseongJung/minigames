@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams, NavLin
 import logo from './logo.svg';
 import './App.css';
 import Tictactoe from './pages/Tictactoe';
+import SidebarMenu from 'react-bootstrap-sidebar-menu';
 
 // 메인 페이지
 const Home = () => {
@@ -95,31 +96,33 @@ const NoPage = () => {
 
 function App() {
   return (
-    <Router>
-      <nav style={{padding: 10}}>
-        <NavLink to='/' style={{padding: 5}}>Home</NavLink>{' '}
-        <NavLink to='/gugudan' style={{padding: 5}}>구구단</NavLink>{' '}
-        <NavLink to='/wordRelay' style={{padding: 5}}>끝말잇기</NavLink>{' '}
-        <NavLink to='/numberBaseball' style={{padding: 5}}>숫자야구</NavLink>{' '}
-        <NavLink to='/responseCheck' style={{padding: 5}}>반응속도 체크</NavLink>{' '}
-        <NavLink to='/RSP' style={{padding: 5}}>가위바위보</NavLink>{' '}
-        <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
-        <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
-        <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
-      </nav>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/gugudan' element={<GugudanPage/>} />
-        <Route path='/wordRelay' element={<WordRelayPage/>} />
-        <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
-        <Route path='/responseCheck' element={<ResponseCheckPage/>} />
-        <Route path='/RSP' element={<RSPPage/>} />
-        <Route path='/lotto' element={<LottoPage/>} />
-        <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
-        <Route path='/tictactoe' element={<TictactoePage/>} />
-        <Route path='/*' element={<NoPage/>} />
-      </Routes>
-    </Router>
+    <div>
+      <Router>
+        <nav style={{padding: 10}}>
+          <NavLink to='/' style={{padding: 5}}>Home</NavLink>{' '}
+          <NavLink to='/gugudan' style={{padding: 5}}>구구단</NavLink>{' '}
+          <NavLink to='/wordRelay' style={{padding: 5}}>끝말잇기</NavLink>{' '}
+          <NavLink to='/numberBaseball' style={{padding: 5}}>숫자야구</NavLink>{' '}
+          <NavLink to='/responseCheck' style={{padding: 5}}>반응속도 체크</NavLink>{' '}
+          <NavLink to='/RSP' style={{padding: 5}}>가위바위보</NavLink>{' '}
+          <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
+          <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
+          <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
+        </nav>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/gugudan' element={<GugudanPage/>} />
+          <Route path='/wordRelay' element={<WordRelayPage/>} />
+          <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
+          <Route path='/responseCheck' element={<ResponseCheckPage/>} />
+          <Route path='/RSP' element={<RSPPage/>} />
+          <Route path='/lotto' element={<LottoPage/>} />
+          <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
+          <Route path='/tictactoe' element={<TictactoePage/>} />
+          <Route path='/*' element={<NoPage/>} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
