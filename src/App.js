@@ -1,10 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams, NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Sidebar from './components/SidebarMenu';
 import Tictactoe from './pages/Tictactoe';
-import SidebarMenu from 'react-bootstrap-sidebar-menu';
+import OneToFifty from './pages/OneToFifty';
+import Lotto from './pages/Lotto';
+import RSP from './pages/RSP';
+import BokseupResponseCheck from './pages/ResponseCheck';
+import Gugudan from './pages/Gugudan';
+import WordRelay from './pages/WordRelay';
+import NumberBaseball from './pages/NumberBaseball';
 
-// 메인 페이지
 const Home = () => {
   return(
     <div style={{padding: 20}}>
@@ -19,6 +25,7 @@ const GugudanPage = () => {
     <div style={{padding: 20}}>
       <h1>구구단</h1>
       <p>This page is About view page.</p>
+      <Gugudan/>
     </div>
   );
 }
@@ -28,6 +35,7 @@ const WordRelayPage = () => {
     <div style={{padding: 20}}>
       <h1>끝말잇기</h1>
       <p>This page is About view page.</p>
+      <WordRelay/>
     </div>
   );
 }
@@ -37,6 +45,7 @@ const NumberBaseballPage = () => {
     <div style={{padding: 20}}>
       <h1>숫자야구</h1>
       <p>This page is About view page.</p>
+      <NumberBaseball/>
     </div>
   );
 }
@@ -46,6 +55,7 @@ const ResponseCheckPage = () => {
     <div style={{padding: 20}}>
       <h1>반응속도 체크</h1>
       <p>This page is About view page.</p>
+      <BokseupResponseCheck/>
     </div>
   );
 }
@@ -55,6 +65,7 @@ const RSPPage = () => {
     <div style={{padding: 20}}>
       <h1>가위바위보</h1>
       <p>This page is About view page.</p>
+      <RSP/>
     </div>
   );
 }
@@ -63,6 +74,7 @@ const LottoPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>로또 추첨기</h1>
+      <Lotto/>
     </div>
   );
 }
@@ -72,6 +84,7 @@ const OneToFiftyPage = () => {
     <div style={{padding: 20}}>
       <h1>1~50 숫자세기</h1>
       <p>This page is About view page.</p>
+      <OneToFifty/>
     </div>
   );
 }
@@ -96,19 +109,9 @@ const NoPage = () => {
 
 function App() {
   return (
-    <div>
+    <div style={{display: "flex"}}>
       <Router>
-        <nav style={{padding: 10}}>
-          <NavLink to='/' style={{padding: 5}}>Home</NavLink>{' '}
-          <NavLink to='/gugudan' style={{padding: 5}}>구구단</NavLink>{' '}
-          <NavLink to='/wordRelay' style={{padding: 5}}>끝말잇기</NavLink>{' '}
-          <NavLink to='/numberBaseball' style={{padding: 5}}>숫자야구</NavLink>{' '}
-          <NavLink to='/responseCheck' style={{padding: 5}}>반응속도 체크</NavLink>{' '}
-          <NavLink to='/RSP' style={{padding: 5}}>가위바위보</NavLink>{' '}
-          <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
-          <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
-          <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
-        </nav>
+        <Sidebar />
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/gugudan' element={<GugudanPage/>} />
@@ -125,5 +128,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
