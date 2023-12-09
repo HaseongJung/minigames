@@ -2,6 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams, NavLin
 import logo from './logo.svg';
 import './App.css';
 import Tictactoe from './pages/Tictactoe';
+import OneToFifty from './pages/OneToFifty';
+import Lotto from './pages/Lotto';
+import RSP from './pages/RSP';
+import BokseupResponseCheck from './pages/ResponseCheck';
+import Gugudan from './pages/Gugudan';
+import WordRelay from './pages/WordRelay';
+import NumberBaseball from './pages/NumberBaseball';
 
 // 메인 페이지
 const Home = () => {
@@ -18,6 +25,7 @@ const GugudanPage = () => {
     <div style={{padding: 20}}>
       <h1>구구단</h1>
       <p>This page is About view page.</p>
+      <Gugudan/>
     </div>
   );
 }
@@ -27,6 +35,7 @@ const WordRelayPage = () => {
     <div style={{padding: 20}}>
       <h1>끝말잇기</h1>
       <p>This page is About view page.</p>
+      <WordRelay/>
     </div>
   );
 }
@@ -36,6 +45,7 @@ const NumberBaseballPage = () => {
     <div style={{padding: 20}}>
       <h1>숫자야구</h1>
       <p>This page is About view page.</p>
+      <NumberBaseball/>
     </div>
   );
 }
@@ -45,6 +55,7 @@ const ResponseCheckPage = () => {
     <div style={{padding: 20}}>
       <h1>반응속도 체크</h1>
       <p>This page is About view page.</p>
+      <BokseupResponseCheck/>
     </div>
   );
 }
@@ -54,6 +65,7 @@ const RSPPage = () => {
     <div style={{padding: 20}}>
       <h1>가위바위보</h1>
       <p>This page is About view page.</p>
+      <RSP/>
     </div>
   );
 }
@@ -62,6 +74,7 @@ const LottoPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>로또 추첨기</h1>
+      <Lotto/>
     </div>
   );
 }
@@ -71,6 +84,7 @@ const OneToFiftyPage = () => {
     <div style={{padding: 20}}>
       <h1>1~50 숫자세기</h1>
       <p>This page is About view page.</p>
+      <OneToFifty/>
     </div>
   );
 }
