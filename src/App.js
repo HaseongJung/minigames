@@ -12,16 +12,52 @@ const Home = () => {
     </div>
   );
 }
-// 틱택토 게임 페이지
-const TictactoePage = () => {
+// 구구단 게임 페이지
+const GugudanPage = () => {
   return(
     <div style={{padding: 20}}>
-      <h1>틱택토 (3목 게임, 2인용)</h1>
-      <Tictactoe />
+      <h1>구구단</h1>
+      <p>This page is About view page.</p>
     </div>
   );
 }
-// 지뢰찾기 게임 페이지
+// 끝말잇기 게임 페이지
+const WordRelayPage = () => {
+  return(
+    <div style={{padding: 20}}>
+      <h1>끝말잇기</h1>
+      <p>This page is About view page.</p>
+    </div>
+  );
+}
+// 숫자야구 게임 페이지
+const NumberBaseballPage = () => {
+  return(
+    <div style={{padding: 20}}>
+      <h1>숫자야구</h1>
+      <p>This page is About view page.</p>
+    </div>
+  );
+}
+// 반응속도 체크 게임 페이지
+const ResponseCheckPage = () => {
+  return(
+    <div style={{padding: 20}}>
+      <h1>반응속도 체크</h1>
+      <p>This page is About view page.</p>
+    </div>
+  );
+}
+// 가위바위보 게임 페이지
+const RSPPage = () => {
+  return(
+    <div style={{padding: 20}}>
+      <h1>가위바위보</h1>
+      <p>This page is About view page.</p>
+    </div>
+  );
+}
+// 로또 추첨기 페이지
 const LottoPage = () => {
   return(
     <div style={{padding: 20}}>
@@ -29,39 +65,21 @@ const LottoPage = () => {
     </div>
   );
 }
-// 다른색깔 찾기 게임 페이지
-const FindDifferentPage = () => {
+// 1~50 숫자세기 게임 페이지
+const OneToFiftyPage = () => {
   return(
     <div style={{padding: 20}}>
-      <h1>다른색깔 찾기</h1>
+      <h1>1~50 숫자세기</h1>
       <p>This page is About view page.</p>
     </div>
   );
 }
-// 카드 짝 맞추기 게임 페이지
-const CardPairPage = () => {
+// 틱택토 게임 페이지
+const TictactoePage = () => {
   return(
     <div style={{padding: 20}}>
-      <h1>카드 짝 맞추기</h1>
-      <p>This page is About view page.</p>
-    </div>
-  );
-}
-// 기억력 테스트 게임 페이지
-const MemoryTestPage = () => {
-  return(
-    <div style={{padding: 20}}>
-      <h1>기억력 테스트</h1>
-      <p>This page is About view page.</p>
-    </div>
-  );
-}
-// 2048 게임 페이지
-const NumberPuzzlePage = () => {
-  return(
-    <div style={{padding: 20}}>
-      <h1>2048</h1>
-      <p>This page is About view page.</p>
+      <h1>틱택토 (3목 게임, 2인용)</h1>
+      <Tictactoe />
     </div>
   );
 }
@@ -80,21 +98,25 @@ function App() {
     <Router>
       <nav style={{padding: 10}}>
         <NavLink to='/' style={{padding: 5}}>Home</NavLink>{' '}
+        <NavLink to='/gugudan' style={{padding: 5}}>구구단</NavLink>{' '}
+        <NavLink to='/wordRelay' style={{padding: 5}}>끝말잇기</NavLink>{' '}
+        <NavLink to='/numberBaseball' style={{padding: 5}}>숫자야구</NavLink>{' '}
+        <NavLink to='/responseCheck' style={{padding: 5}}>반응속도 체크</NavLink>{' '}
+        <NavLink to='/RSP' style={{padding: 5}}>가위바위보</NavLink>{' '}
+        <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
+        <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
         <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
-        <NavLink to='/lotto' style={{padding: 5}}>로또 추첨기</NavLink>{' '}
-        <NavLink to='/findDifferent' style={{padding: 5}}>다른색깔 찾기</NavLink>{' '}
-        <NavLink to='/cardPair' style={{padding: 5}}>카드 짝 맞추기</NavLink>{' '}
-        <NavLink to='/memoryTest' style={{padding: 5}}>기억력 테스트</NavLink>{' '}
-        <NavLink to='/numberPuzzle' style={{padding: 5}}>2048</NavLink>{' '}
       </nav>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/gugudan' element={<GugudanPage/>} />
+        <Route path='/wordRelay' element={<WordRelayPage/>} />
+        <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
+        <Route path='/responseCheck' element={<ResponseCheckPage/>} />
+        <Route path='/RSP' element={<RSPPage/>} />
         <Route path='/lotto' element={<LottoPage/>} />
+        <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
         <Route path='/tictactoe' element={<TictactoePage/>} />
-        <Route path='/findDifferent' element={<FindDifferentPage/>} />
-        <Route path='/cardPair' element={<CardPairPage/>} />
-        <Route path='/memoryTest' element={<MemoryTestPage/>} />
-      <Route path='/numberPuzzle' element={<NumberPuzzlePage/>} />
         <Route path='/*' element={<NoPage/>} />
       </Routes>
     </Router>
