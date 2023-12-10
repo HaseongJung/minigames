@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo, memo } from 'react';
+import '../styles/Lotto.css';
 
 function getWinNumbers() {
   const balls = Array(45)
@@ -38,7 +39,9 @@ const Ball = memo(({ number }) => {
     fontSize: '20px',
     textAlign: 'center',
     marginRight: '20px',
+    justifyContent: 'space-around',
     backgroundColor: background,
+    
   };
 
   return <div style={style}>{number}</div>;
@@ -79,13 +82,18 @@ const Lotto = () => {
 
   return (
     <>
-      <div>당첨 숫자</div>
-      {winBalls.map((v) => (
-        <Ball key={v} number={v} />
-      ))}
-      <div>보너스</div>
-      {bonus && <Ball key={bonus} number={bonus} />}
-      {redo && <button onClick={onClickRedo}>다시!</button>}
+      <div className='Phone'>
+          <div className='Display'>
+          <div className='Winning'>당첨 숫자</div>
+          {winBalls.map((v) => (
+            <Ball key={v} number={v} />
+          ))}
+          <div className='Bonus'>보너스</div>
+          {bonus && <Ball key={bonus} number={bonus} />}
+          <br/>
+          {redo && <button onClick={onClickRedo} className='Re'>다시!</button>}
+          </div>
+        </div>
     </>
   );
 };

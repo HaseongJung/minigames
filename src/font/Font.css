@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Karmatic Arcade';
+  font-size: normal;
+  font-weight: 400;
+  src: url('../AnyConv.com__ka1.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Blox';
+
+  src: url('Blox2.ttf');
+}

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/WordRelay.css';
 
 const WordRelay = () => {
   const [word, setWord] = useState('밍주');
@@ -22,16 +23,22 @@ const WordRelay = () => {
 
   return (
     <>
-      <div>{word}</div>
-      <form onSubmit={onSubmitForm}>
-        <input
-          ref={inputEl}
-          value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
-        />
-        <button>입력!</button>
-      </form>
-      <div>{result}</div>
+    <div className='Phone'>
+      <div className='Display'>
+        <div className='WordGame'>
+          <div>{word}</div>
+            <form onSubmit={onSubmitForm}>
+              <input
+                ref={inputEl}
+                value={value}
+                onChange={(e) => setValue(e.currentTarget.value)}
+              />
+              <button>입력!</button>
+            </form>
+            <div>{result}</div>
+        </div>
+      </div>
+    </div>
     </>
   );
 };

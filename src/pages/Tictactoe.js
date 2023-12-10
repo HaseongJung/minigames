@@ -105,8 +105,12 @@ const Tictactoe = () => {
 
     return(
         <>
-            <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
-            {winner && <div><h2>{winner}님의 승리!</h2></div>}
+        <div className='Phone'>
+           
+                <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
+                {winner && <div><h2>{winner}님의 승리!</h2></div>}
+            
+        </div>
         </>
     )
 };
