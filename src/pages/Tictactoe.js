@@ -96,6 +96,7 @@ const Tictactoe = () => {
                 });
             });
             if (all) {
+                dispatch({ type: SET_WINNER, winner: "nobody" });
                 dispatch({ type: RESET_GAME });
             } else {
                 dispatch({ type: CHANGE_TURN });
@@ -105,10 +106,14 @@ const Tictactoe = () => {
 
     return(
         <>
-            <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
-            {winner && <div><h2>{winner}님의 승리!</h2></div>}
+        <div className='Phone'>
+           
+                <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
+                {(winner==="nobody") ? <div><h2>무승부!</h2></div> : (winner==='') ? <div></div> : winner && <div><h2>{winner}님의 승리!</h2></div>}
+            
+        </div>
         </>
-    )
+    );
 };
 
 export default Tictactoe

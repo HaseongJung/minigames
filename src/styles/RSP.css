@@ -1,55 +1,70 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-::selection {
-  color: #fff;
-  background-color: #7d2ae8;
-}
-.container {
-  width: 600px;
-  padding: 2rem 7rem;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.result_images {
-  text-align: center;
-  display: flex;
-  column-gap: 7rem;
-}
-.container.start .user_result {
-  transform-origin: left;
-  animation: userShake 0.7s ease infinite;
+.Phone{
+  background-color: #FFE7E7;
+  margin: auto;
+  width: 500px;
+  height: 600px;
+  border: 2px solid #FFE7E7; 
+  border-radius: 50px;
+  text-align: center; 
 }
 
-.container.start .cpu_result {
-  transform-origin: right;
-  animation: cpuShake 0.7s ease infinite;
+.Display{
+  background-color: #FFFFFF;
+  margin: 50px auto auto auto;
+  width: 400px;
+  height: 300px;
+  border: 2px solid #FFFFFF; 
+  border-radius: 50px;
+  text-align: center; 
+
+}
+
+/*
+::selection {
+  background-color: #7d2ae8;
+  border: 2px solid #7d2ae8;
+}
+*/
+.container {
+  width: auto;
+  margin: 20px auto auto auto;
+}
+.result_images {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 50px;
 }
 
 .result_images img {
   width: 100px;
+  margin-top: 20px;
+  
 }
+
 .result {
   text-align: center;
   font-size: 2rem;
   color: #7d2ae8;
   margin-top: 1.5rem;
+  
 }
 
 .option_image img {
   width: 50px;
 }
 .option_images {
+
+  width: 400px;
   display: flex;
   align-items: center;
-  margin-top: 2.5rem;
+  margin-top: 10rem;
   justify-content: space-between;
 }
 .container.start .option_images {
@@ -78,3 +93,4 @@
   margin-top: 1rem;
   pointer-events: none;
 }
+

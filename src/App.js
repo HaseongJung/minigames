@@ -10,6 +10,7 @@ import BokseupResponseCheck from './pages/ResponseCheck';
 import Gugudan from './pages/Gugudan';
 import WordRelay from './pages/WordRelay';
 import NumberBaseball from './pages/NumberBaseball';
+import InitialPage from './pages/InitialPage';
 
 const Home = () => {
   return(
@@ -90,6 +91,14 @@ const TictactoePage = () => {
     </div>
   );
 }
+//로딩 페이지
+const Initial = () => {
+  return(
+    <div style={{padding: 20}}>
+      <InitialPage/>
+    </div>
+  );
+}
 // 404 페이지
 const NoPage = () => {
   return(
@@ -101,21 +110,22 @@ const NoPage = () => {
 
 function App() {
   return (
-    <div style={{width: "100px", display: "flex"}}>
+    <div style={{display: "flex"}}>
       <Router>
-        <Sidebar />
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/gugudan' element={<GugudanPage/>} />
-          <Route path='/wordRelay' element={<WordRelayPage/>} />
-          <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
-          <Route path='/responseCheck' element={<ResponseCheckPage/>} />
-          <Route path='/RSP' element={<RSPPage/>} />
-          <Route path='/lotto' element={<LottoPage/>} />
-          <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
-          <Route path='/tictactoe' element={<TictactoePage/>} />
-          <Route path='/*' element={<NoPage/>} />
-        </Routes>
+        <Sidebar style={{width: "3000px"}}/>
+          <Routes>
+            <Route path='/' element={<Initial/>} />
+            <Route path='/home' element={<Home/>} />
+            <Route path='/gugudan' element={<GugudanPage/>} />
+            <Route path='/wordRelay' element={<WordRelayPage/>} />
+            <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
+            <Route path='/responseCheck' element={<ResponseCheckPage/>} />
+            <Route path='/RSP' element={<RSPPage/>} />
+            <Route path='/lotto' element={<LottoPage/>} />
+            <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
+            <Route path='/tictactoe' element={<TictactoePage/>} />
+            <Route path='/*' element={<NoPage/>} />
+          </Routes> 
       </Router>
     </div>
   );

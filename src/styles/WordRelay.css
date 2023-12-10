@@ -1,0 +1,23 @@
+.Phone{
+  background-color: #FFE7E7;
+  margin: auto;
+  width: 500px;
+  height: 600px;
+  border: 2px solid #FFE7E7; 
+  border-radius: 50px;
+  text-align: center; 
+}
+
+.Display{
+  background-color: #FFFFFF;
+  margin: 50px auto auto auto;
+  width: 400px;
+  height: 300px;
+  border: 2px solid #FFFFFF; 
+  border-radius: 50px;
+  text-align: center; 
+}
+
+.WordGame{
+  margin-top: 70px;
+}
