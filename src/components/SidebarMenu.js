@@ -27,7 +27,6 @@ const SidebarMenu = () => {
           <MenuItem className="menuItem" component={<Link to="/lotto" />}>로또 추첨기</MenuItem>
           <MenuItem className="menuItem" component={<Link to="/oneToFifty" />}>1~50숫자 세기</MenuItem>
           <MenuItem className="menuItem" component={<Link to="/tictactoe" />}>틱택토</MenuItem>
-
         </Menu>
       </Sidebar>
   </>

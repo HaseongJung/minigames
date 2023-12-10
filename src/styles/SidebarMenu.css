@@ -1,16 +1,13 @@
 .sidebar {
     height: 100vh;
-    /* width: 500px; */
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
 .menu {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 .menuItem {
-    height: 70px;
 }
 a {
     height: 100%;

@@ -15,7 +15,6 @@ const Home = () => {
   return(
     <div style={{padding: 20}}>
       <h1>Home View</h1>
-      <p>This page is Home view page.</p>
     </div>
   );
 }
@@ -24,7 +23,6 @@ const GugudanPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>구구단</h1>
-      <p>This page is About view page.</p>
       <Gugudan/>
     </div>
   );
@@ -34,7 +32,6 @@ const WordRelayPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>끝말잇기</h1>
-      <p>This page is About view page.</p>
       <WordRelay/>
     </div>
   );
@@ -44,7 +41,6 @@ const NumberBaseballPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>숫자야구</h1>
-      <p>This page is About view page.</p>
       <NumberBaseball/>
     </div>
   );
@@ -54,7 +50,6 @@ const ResponseCheckPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>반응속도 체크</h1>
-      <p>This page is About view page.</p>
       <BokseupResponseCheck/>
     </div>
   );
@@ -64,7 +59,6 @@ const RSPPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>가위바위보</h1>
-      <p>This page is About view page.</p>
       <RSP/>
     </div>
   );
@@ -83,7 +77,6 @@ const OneToFiftyPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>1~50 숫자세기</h1>
-      <p>This page is About view page.</p>
       <OneToFifty/>
     </div>
   );
@@ -102,14 +95,13 @@ const NoPage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>404 : Page Not Found</h1>
-      <p>This page is not exist.</p>
     </div>
   );
 }
 
 function App() {
   return (
-    <div style={{display: "flex"}}>
+    <div style={{width: "100px", display: "flex"}}>
       <Router>
         <Sidebar />
         <Routes>
