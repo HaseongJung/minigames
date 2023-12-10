@@ -9,6 +9,7 @@ import BokseupResponseCheck from './pages/ResponseCheck';
 import Gugudan from './pages/Gugudan';
 import WordRelay from './pages/WordRelay';
 import NumberBaseball from './pages/NumberBaseball';
+import InitialPage from './pages/InitialPage';
 
 // 메인 페이지
 const Home = () => {
@@ -97,6 +98,14 @@ const TictactoePage = () => {
     </div>
   );
 }
+//로딩 페이지
+const Initial = () => {
+  return(
+    <div style={{padding: 20}}>
+      <InitialPage/>
+    </div>
+  );
+}
 // 404 페이지
 const NoPage = () => {
   return(
@@ -120,9 +129,12 @@ function App() {
         <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
         <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
         <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
+  
+        
       </nav>
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Initial/>} />
+        <Route path='/home' element={<Home/>} />
         <Route path='/gugudan' element={<GugudanPage/>} />
         <Route path='/wordRelay' element={<WordRelayPage/>} />
         <Route path='/numberBaseball' element={<NumberBaseballPage/>} />

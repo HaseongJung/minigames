@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/ResponseCheck.css';
 
 class BokseupResponseCheck extends Component {
   constructor(props) {
@@ -15,8 +16,10 @@ class BokseupResponseCheck extends Component {
   endTime;
 
   screenStyle = (bgColorState) => ({
-    width: '300px',
-    height: '200px',
+    width: '400px',
+    height: '300px',
+    margin: '50px auto auto auto',
+    borderRadius: '50px',
     textAlign: 'center',
     userSelect: 'none',
     backgroundColor:
@@ -76,10 +79,12 @@ class BokseupResponseCheck extends Component {
 
     return (
       <>
-        <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
-          {message}
+      <div className='Phone'>
+          <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
+            {message}
+          </div>
+          {result.length === 0 ? null : <div className='Result'> 반응 시간 평균 {this.resultAverage()} ms 걸렸어요.</div>}
         </div>
-        {result.length === 0 ? null : <div> 반응 시간 평균 {this.resultAverage()} ms 걸렸어요.</div>}
       </>
     );
   }

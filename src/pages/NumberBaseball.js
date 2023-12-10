@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/NumberBaseball.css';
 
 function ranmderNumber() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -68,22 +69,27 @@ class NumberBaseball extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input value={this.state.userInput} onChange={this.onChange} type="number" />
-          <button>확인</button>
-        </form>
-        <div>시도 : {this.state.tries.length}</div>
+      <div className='Phone'>
+        <div className='Display'>
+          <div className='Form'>
+            <form onSubmit={this.onSubmit}>
+              <input value={this.state.userInput} onChange={this.onChange} type="number" />
+              <button>확인</button>
+            </form>
+          </div>
+          <br/>
+          <div>시도 : {this.state.tries.length}</div>
+          <div><br/>{this.state.result}</div>
+        </div>
         <ul>
-          {this.state.tries.map((v, index) => {
-            return (
-              <li key={`${index + 1}차 시도`}>
-                {v.try} : {v.result}
-              </li>
-            );
-          })}
-        </ul>
-        <div>{this.state.result}</div>
+            {this.state.tries.map((v, index) => {
+              return (
+                <li key={`${index + 1}차 시도`}>
+                  {v.try} : {v.result}
+                </li>
+              );
+            })}
+          </ul>
       </div>
     );
   }

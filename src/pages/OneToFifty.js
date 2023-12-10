@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import '../styles/OneToFifty.css'
 
 let array = [];
 for (let i = 1; i <= 25; i++) {
@@ -15,9 +16,6 @@ const shuffleArray = array => {
 };
 
 const Container = styled.div`
-  width: 600px;
-  height: 800px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,14 +31,15 @@ const StartButton = styled.button`
 const BoardContainer = styled.div`
   width: 400px;
   height: 400px;
-  border: 1px solid blue;
+  background-color: #ffffff;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  margin: 49px auto auto auto;
 `;
 
 const CellContainer = styled.div`
-  border: 1px solid red;
+  border: 1px solid #FFE7E7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,14 +132,17 @@ function OneToFifty() {
   };
 
   return (
-    <Container>
-      <Board numbers={numbers} handleClick={handleClick}></Board>
-      {gameFlag ? (
-        <Timer />
-      ) : (
-        <StartButton onClick={startGame}>Start</StartButton>
-      )}
-    </Container>
+    <div className="Phone">
+  
+        <Container>
+          <Board numbers={numbers} handleClick={handleClick}></Board>
+          {gameFlag ? (
+            <Timer />
+          ) : (
+            <StartButton onClick={startGame}>Start</StartButton>
+          )}
+        </Container>
+    </div>
   );
 }
 

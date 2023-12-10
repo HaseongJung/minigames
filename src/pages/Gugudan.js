@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import '../styles/Gugudan.css';
 
 const Gugudan = () => {
   const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
@@ -32,22 +33,27 @@ const Gugudan = () => {
   };
 
   return (
-    <div className="gugudan">
-      <div className="score">Score: {score}</div>
-      <form onSubmit={onFormSubmit} className="gugudan-form">
-        <span className="question">
-          {first} x {second} ={' '}
-        </span>
-        <input
-          type="number"
-          ref={inputRef}
-          value={value}
-          onChange={onInputChange}
-          className="answer"
-          required
-        ></input>
-      </form>
-      <div className="result">{result}</div>
+    <div className='Phone'>
+      <div className='Display'>
+        <div className="gugudan">
+          <form onSubmit={onFormSubmit} className="gugudan-form">
+            <span className="question">
+              {first} x {second} ={' '}
+            </span>
+            <input
+              type="number"
+              ref={inputRef}
+              value={value}
+              onChange={onInputChange}
+              className="answer"
+              required
+            ></input>
+          </form>
+          <div className="result">{result}</div>
+          <div className="score">Score: {score}</div>
+        </div>
+      </div>
+      
     </div>
   );
 };
