@@ -31,8 +31,8 @@ function RSP() {
   };
 
   return (
-    <div className='Phone'>
-      <div className='Display'>
+    <div className='RSP_Phone'>
+      <div className='RSP_Display'>
         <section className="container">
           <div className="result_field">
             <div className="result_images">

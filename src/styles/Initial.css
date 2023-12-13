@@ -1,8 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 .text_box{
-  height: 250px;
-  font-size: 2rem;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: xxx-large;
   text-align: left;
-  font-family: 'Blox';
-  border: 2px black solid;
+  width: auto;
+  height: auto;
+  padding-left: 35%;
+  padding-top: 10%;
 }

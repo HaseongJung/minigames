@@ -1,4 +1,4 @@
-.Phone{
+.Tictactoe_Phone{
   background-color: #FFE7E7;
   margin: auto;
   width: 500px;
@@ -27,8 +27,8 @@ body {
     border-collapse: collapse;
     margin: 49px auto auto auto;
     background-color: #FFFFFF;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
   
   td {

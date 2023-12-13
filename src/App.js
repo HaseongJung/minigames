@@ -11,11 +11,16 @@ import Gugudan from './pages/Gugudan';
 import WordRelay from './pages/WordRelay';
 import NumberBaseball from './pages/NumberBaseball';
 import InitialPage from './pages/InitialPage';
+import Home from './pages/Home';
+import QuizApp from './pages/Quiz';
 
-const Home = () => {
+// 메인 페이지
+const HomePage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>Home View</h1>
+      <p>This page is Home view page.</p>
+      <Home/>
     </div>
   );
 }
@@ -82,6 +87,15 @@ const OneToFiftyPage = () => {
     </div>
   );
 }
+// 퀴즈 게임 페이지
+const QuizPage = () => {
+  return(
+    <div>
+      <QuizApp/>
+    </div>
+  )
+}
+
 // 틱택토 게임 페이지
 const TictactoePage = () => {
   return(
@@ -115,7 +129,7 @@ function App() {
         <Sidebar style={{width: "3000px"}}/>
           <Routes>
             <Route path='/' element={<Initial/>} />
-            <Route path='/home' element={<Home/>} />
+            <Route path='/home' element={<HomePage/>} />
             <Route path='/gugudan' element={<GugudanPage/>} />
             <Route path='/wordRelay' element={<WordRelayPage/>} />
             <Route path='/numberBaseball' element={<NumberBaseballPage/>} />

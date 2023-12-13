@@ -106,8 +106,8 @@ const Tictactoe = () => {
 
     return(
         <>
-        <div className='Phone'>
-           
+        <div className='Tictactoe_Phone'>
+        
                 <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
                 {(winner==="nobody") ? <div><h2>무승부!</h2></div> : (winner==='') ? <div></div> : winner && <div><h2>{winner}님의 승리!</h2></div>}
             

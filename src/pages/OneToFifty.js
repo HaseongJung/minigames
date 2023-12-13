@@ -26,6 +26,11 @@ const StartButton = styled.button`
   margin-top: 30px;
   width: 100px;
   height: 50px;
+  background-color: #ffffff;
+  border: none;
+  &:hover {
+    background-color: #FFE7E7;
+  }
 `;
 
 const BoardContainer = styled.div`
