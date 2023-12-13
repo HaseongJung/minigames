@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-logo {
@@ -35,4 +37,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.css-ewdv3l {
+  width: 100%;
+  height: 100vh;
+}
+
+.css-nwj8xd >.ps-menu-button {
+  height: 70px;
 }
