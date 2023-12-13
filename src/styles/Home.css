@@ -1,0 +1,16 @@
+.Choice{
+  margin: auto;
+  width: 600px;
+  height: 600px;
+}
+
+.Home_table{
+  width: 500px;
+  height: 500px;
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+.Home_tr, .Home_td{
+  border: 1px solid #000;
+  border-radius: 20px;
+} 

@@ -105,11 +105,11 @@ const Tictactoe = () => {
 
     return(
         <>
-        <div className='Phone'>
-           
+        <div className='Tictactoe_Phone'>
+        
                 <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
                 {winner && <div><h2>{winner}님의 승리!</h2></div>}
-            
+    
         </div>
         </>
     )

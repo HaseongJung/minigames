@@ -10,13 +10,16 @@ import Gugudan from './pages/Gugudan';
 import WordRelay from './pages/WordRelay';
 import NumberBaseball from './pages/NumberBaseball';
 import InitialPage from './pages/InitialPage';
+import Home from './pages/Home';
+import QuizApp from './pages/Quiz';
 
 // 메인 페이지
-const Home = () => {
+const HomePage = () => {
   return(
     <div style={{padding: 20}}>
       <h1>Home View</h1>
       <p>This page is Home view page.</p>
+      <Home/>
     </div>
   );
 }
@@ -89,6 +92,15 @@ const OneToFiftyPage = () => {
     </div>
   );
 }
+// 퀴즈 게임 페이지
+const QuizPage = () => {
+  return(
+    <div>
+      <QuizApp/>
+    </div>
+  )
+}
+
 // 틱택토 게임 페이지
 const TictactoePage = () => {
   return(
@@ -128,13 +140,14 @@ function App() {
         <NavLink to='/RSP' style={{padding: 5}}>가위바위보</NavLink>{' '}
         <NavLink to='/lotto' style={{padding: 5}}>로또추첨기</NavLink>{' '}
         <NavLink to='/oneToFifty' style={{padding: 5}}>1~50 숫자체크</NavLink>{' '}
+        <NavLink to='/quiz' style={{padding: 5}}>퀴즈게임</NavLink>{' '}
         <NavLink to='/tictactoe' style={{padding: 5}}>틱택토</NavLink>{' '}
   
         
       </nav>
       <Routes>
         <Route path='/' element={<Initial/>} />
-        <Route path='/home' element={<Home/>} />
+        <Route path='/home' element={<HomePage/>} />
         <Route path='/gugudan' element={<GugudanPage/>} />
         <Route path='/wordRelay' element={<WordRelayPage/>} />
         <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
@@ -142,6 +155,7 @@ function App() {
         <Route path='/RSP' element={<RSPPage/>} />
         <Route path='/lotto' element={<LottoPage/>} />
         <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
+        <Route path='/quiz' element={<QuizPage/>} />
         <Route path='/tictactoe' element={<TictactoePage/>} />
         <Route path='/*' element={<NoPage/>} />
       </Routes>
