@@ -37,8 +37,9 @@ function RSP() {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
+
   return (
-    <div className='RSP'>
+    <div className='Container'>
       <div className="modal show" style={{ display: 'block', position: 'initial' }}>
         <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
             <Modal.Header closeButton>
@@ -55,6 +56,7 @@ function RSP() {
             </Modal.Footer>
         </Modal>
       </div>
+      <div className='RSP'>
         <div className='RSP_Phone'>
           <div className='RSP_Display'>
             <section className="container">
@@ -88,6 +90,7 @@ function RSP() {
           ))}
         </div>
       </div>
+  </div>
   </div>
   );
 }

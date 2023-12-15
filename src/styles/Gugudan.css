@@ -4,6 +4,11 @@
 
 .Gugudan{
   display: flex;
+  justify-content: center;
+}
+
+h2{
+  font-family: "BMHANA";
 }
 
 .Gugudan_Phone{
@@ -13,7 +18,6 @@
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
   text-align: center; 
-  margin-left: 30%;
   /*box-shadow:3px 3px 3px 3px #999;*/
 }
 
@@ -27,20 +31,20 @@
   text-align: center; 
 }
 
-.gugudan{
-  margin-top: 70px;
+.gugudan-form{
+  margin-top: 125px;
 }
 
-.gugudan-form  {
-  height: 50px;
-  font-size: 2em;
-  margin-bottom: 70px;
+.gugudan_question{
+  font-size: 200%;
+  font-weight: bold;
 }
 
-.score {
-  font-size: 2em;
-  margin-top: 50px;
 
+.Now_Gugudan_score{
+  margin-top: 180px;
+  font-weight: bold;
+  font-size: 250%;
 }
 
 .Gugudan_Score{
@@ -84,7 +88,12 @@
 }
 
 .Gugudan_rank{
-
   padding: 20px;
   font-weight: bold;
+}
+
+
+.Gugudan_result{
+  margin-top: 10px;
+  font-size: 400%;
 }

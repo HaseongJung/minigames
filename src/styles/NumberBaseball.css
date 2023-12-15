@@ -1,10 +1,10 @@
 .NumBaseball{
   display: flex;
+  justify-content: center;
 }
 
 .NumBaseball_Phone{
   background-color: #FFE7E7;
-  margin-left: 30%;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 
@@ -26,13 +26,14 @@
 
 .Form{
   width: 100%;
-  margin-top: 50px;
+  margin-top: 125px;
 }
 
 ul{
   list-style: decimal;
   width: 400px;
   margin: 20px auto auto auto;
+  font-family: "BMHANNA";
 }
 .TriesCount{
   margin-left: 20px;
@@ -50,4 +51,9 @@ ul{
 .NumBaseball_Result{
   padding: 20px;
   font-weight: bold;
+  font-family: "BMHANNA";
+}
+
+.NumBaseball_Try{
+  font-size: 200%;
 }

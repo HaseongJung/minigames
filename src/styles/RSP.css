@@ -7,6 +7,7 @@
 
 .RSP{
   display: flex;
+  justify-content: center;
 }
 
 .RSP_Phone{
@@ -15,8 +16,7 @@
   height: 600px;
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
-  text-align: center; 
-  margin-left: 30%; 
+  text-align: center;
 }
 
 .RSP_Display{

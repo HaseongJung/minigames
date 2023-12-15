@@ -76,7 +76,7 @@ class NumberBaseball extends Component {
   
   render() {
     return (
-      <div className='NumBaseball'>
+      <div className='Container'>
         <div className="modal show" style={{ display: 'block', position: 'initial' }} >
           <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="xl" centered>
               <Modal.Header closeButton>
@@ -96,6 +96,7 @@ class NumberBaseball extends Component {
               </Modal.Footer>
           </Modal>
         </div>
+        <div className='NumBaseball'>
         <div className='NumBaseball_Phone'>
           <div className='NumBaseball_Display'>
             <div className='Form'>
@@ -105,7 +106,7 @@ class NumberBaseball extends Component {
               </form>
             </div>
             <br/>
-            <div>시도 : {this.state.tries.length}</div>
+            <div className='NumBaseball_Try'>시도 : {this.state.tries.length}</div>
             <div><br/>{this.state.result}</div>
           </div>
           <ul>
@@ -126,6 +127,7 @@ class NumberBaseball extends Component {
             ))}
           </div>
         </div>
+      </div>
       </div>
     );
   }

@@ -15,8 +15,11 @@ import InitialPage from './pages/InitialPage';
 import Quiz from './pages/Quiz';
 import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import QuizApp from './pages/Quiz';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// 로딩 페이지
+
+//로딩 페이지
 const Initial = () => {
   return(
     <div className="Container" >
@@ -24,11 +27,13 @@ const Initial = () => {
     </div>
   );
 }
+
+// 메인 페이지
 const HomePage = () => {
   return(
-    <div  className='Container'>
+    <div className='Container'>
       <h1 className='GameName'>Home View</h1>
-      <Home / >
+      <Home/>
     </div>
   );
 }
@@ -95,21 +100,22 @@ const OneToFiftyPage = () => {
     </div>
   );
 }
+// 퀴즈 게임 페이지
+const QuizPage = () => {
+  return(
+    <div className="Container">
+      <h1 className='GameName'>퀴즈</h1>
+      <Quiz/>
+    </div>
+  );
+}
+
 // 틱택토 게임 페이지
 const TictactoePage = () => {
   return(
     <div className="Container">
       <h1 className='GameName'>틱택토 (3목 게임, 2인용)</h1>
       <Tictactoe />
-    </div>
-  );
-}
-// 퀴즈 페이지
-const QuizPage = () => {
-  return(
-    <div className="Container">
-      <h1 className='GameName'>퀴즈</h1>
-      <Quiz/>
     </div>
   );
 }

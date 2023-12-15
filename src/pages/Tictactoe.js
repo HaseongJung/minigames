@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../styles/Tictactoe.css';
 
+
 const initialState = {
   winner: '',
   turn: 'O',
@@ -108,12 +109,13 @@ const Tictactoe = () => {
       }
   }, [recentCell]);
 
-    const [show, setShow] = useState(true);
-    const handleClose = () => setShow(false);
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
 
-    return(
-        <div className='Tictactoe'>
-            <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+
+  return(
+      <div className='Container'>
+        <div className="modal show" style={{ display: 'block', position: 'initial' }}>
                 <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
                     <Modal.Header closeButton>
                         <Modal.Title>틱택토 게임 (3목)</Modal.Title>
@@ -129,9 +131,10 @@ const Tictactoe = () => {
                     </Modal.Footer>
                 </Modal>
             </div>
-            <div className='Tictactoe_Phone'>
-                    <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
-                    {(winner==="nobody") ? <div><h2>무승부!</h2></div> : (winner==='') ? <div></div> : winner && <div><h2>{winner}님의 승리!</h2></div>}
+            <div className='Tictactoe'>
+        <div className='Tictactoe_Phone'>
+            <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
+            {(winner==="nobody") ? <div className='TTT_R'><h2>무승부!</h2></div> : (winner==='') ? <div className='TTT_R'></div> : winner && <div className='TTT_R'><h2>{winner}님의 승리!</h2></div>}
         </div>
         <div className='Tictactoe_Score'>
                 <div className='Tictactoe_Records'>
@@ -140,6 +143,7 @@ const Tictactoe = () => {
                     <p key={index} div className='Tictactoe_Result'> {index + 1} 번 게임: {record}</p>
                     ))}
                 </div>
+            </div>
             </div>
       </div>
     );

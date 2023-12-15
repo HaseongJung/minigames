@@ -1,12 +1,12 @@
 .my-modal .modal-content {
-    background-color: #FFE7E7;
-  }
+  background-color: #FFE7E7;
+}
 
 .my-modal .h4 {
-    font-family: "BMHANA";
-    font-weight: 700;
+  font-family: "BMHANA";
+  font-weight: 700;
 }
 
 .my-modal .modal-body, .my-modal .modal-footer {
-    background-color: #FFF6F6;
+  background-color: #FFF6F6;
 }

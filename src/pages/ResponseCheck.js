@@ -85,13 +85,14 @@ class BokseupResponseCheck extends Component {
   };
 
   handleClose = () => this.setState({show: false}); // 모달 닫기
-
+  
   render() {
     const { bgColorState, message, result, resultHistory } = this.state;
 
     return (
-      <div className='ResponseCheck'>
-        <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+      <>
+      <div className='Container'>
+      <div className="modal show" style={{ display: 'block', position: 'initial' }}>
           <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="lg" centered>
               <Modal.Header closeButton>
                   <Modal.Title>반응속도 체크 게임</Modal.Title>
@@ -107,6 +108,7 @@ class BokseupResponseCheck extends Component {
               </Modal.Footer>
           </Modal>
         </div>
+        <div className='ResponseCheck'>
         <div className='Response_Phone'>
             <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
               {message}
@@ -122,6 +124,8 @@ class BokseupResponseCheck extends Component {
               </div>
             </div>
           </div>
+          </div>
+      </>
     );
   }
 }

@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "../styles/Modal.css";
 
-
 function getWinNumbers() {
   const balls = Array(45)
     .fill()
@@ -122,7 +121,7 @@ const Lotto = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className='Lotto'>
+    <div className='Container'>
       <div className="modal show" style={{ display: 'block', position: 'initial' }}>
         <Modal className="my-modal" show={show} onHide={handleClose} centered>
             <Modal.Header closeButton>
@@ -139,6 +138,7 @@ const Lotto = () => {
             </Modal.Footer>
         </Modal>
       </div>
+      <div className='Lotto'>
       <div className='Lotto_Phone'>
           <div className='Lotto_Display'>
           {start && <div className='Winning'>당첨 숫자</div>}
@@ -171,6 +171,7 @@ const Lotto = () => {
             ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

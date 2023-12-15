@@ -52,7 +52,7 @@ const Gugudan = () => {
   }
 
   return (
-    <div className='Gugudan'>
+    <div className='Container'>
       <div className="modal show" style={{ display: 'block', position: 'initial' }} >
         <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
             <Modal.Header closeButton>
@@ -68,12 +68,12 @@ const Gugudan = () => {
                 <Button variant="secondary" onClick={handleClose}>Close</Button>
             </Modal.Footer>
         </Modal>
-      </div>
+      <div className='Gugudan'>
       <div className='Gugudan_Phone'>
         <div className='Gugudan_Display'>
           <div className="gugudan">
             <form onSubmit={onFormSubmit} className="gugudan-form">
-              <span className="question">
+              <span className="gugudan_question">
                 {first} x {second} ={' '}
               </span>
               <input
@@ -86,8 +86,8 @@ const Gugudan = () => {
                 disabled={gameOver}
               ></input>
             </form>
-            <div className="result">{result}</div>
-            <div className="score">Score: {score}</div>
+            <div className="Now_Gugudan_score">Score: {score}</div>
+            <div className="Gugudan_result">{result}</div>
             {gameOver && <button className="Gugudan_Button" onClick={resetGame}>다시하기</button>}
           </div>
         </div>
@@ -101,6 +101,8 @@ const Gugudan = () => {
                 </div>
             </div>
       </div>
+      </div>
+    </div>
   );
 };
 

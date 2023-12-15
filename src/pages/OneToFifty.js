@@ -155,7 +155,7 @@ function OneToFifty() {
   const handleClose = () => setShow(false);
 
   return (
-    <div className='OneToFifty'>
+    <div className="Container">
       <div className="modal show" style={{ display: 'block', position: 'initial' }}>
         <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
             <Modal.Header closeButton>
@@ -172,6 +172,7 @@ function OneToFifty() {
             </Modal.Footer>
         </Modal>
       </div>
+      <div className="OneToFifty">
       <div className="OneToFifty_Phone">
           <Container>
             <Board numbers={numbers} handleClick={handleClick}></Board>
@@ -190,6 +191,7 @@ function OneToFifty() {
             ))}
           </div>
       </div>
+    </div>  
     </div>
   );
 }
