@@ -108,7 +108,6 @@ class BokseupResponseCheck extends Component {
           </Modal>
         </div>
         <div className='Response_Phone'>
-      <>
             <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
               {message}
             </div>
@@ -123,7 +122,6 @@ class BokseupResponseCheck extends Component {
               </div>
             </div>
           </div>
-      </>
     );
   }
 }

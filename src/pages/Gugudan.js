@@ -51,8 +51,6 @@ const Gugudan = () => {
   setGameOver(false);
 }
   
-GameOver(false);
-  }
 
   return (
     <div className='Gugudan'>
