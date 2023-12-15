@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import '../styles/WordRelay.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const WordRelay = () => {
   const [word, setWord] = useState('밍주');
@@ -21,8 +23,27 @@ const WordRelay = () => {
     }
   };
 
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+
+
   return (
-    <>
+    <div className='Container'>
+    <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+    <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
+            <Modal.Header closeButton>
+                <Modal.Title>끝말잇기 게임</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <p>제시어를 보고 끝말잇기를 시작하세요!</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+            </div>
     <div className='WordRelay_Phone'>
       <div className='WordRelay_Display'>
         <div className='WordGame'>
@@ -39,7 +60,7 @@ const WordRelay = () => {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/ResponseCheck.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 class BokseupResponseCheck extends Component {
   constructor(props) {
@@ -81,12 +83,31 @@ class BokseupResponseCheck extends Component {
     return average;
   };
 
+  handleClose = () => this.setState({show: false}); // 모달 닫기
+  
   render() {
     const { bgColorState, message, result, resultHistory } = this.state;
 
     return (
       <>
-      <div className='ResponseCheck'>
+      <div className='Container'>
+      <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+          <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="lg" centered>
+              <Modal.Header closeButton>
+                  <Modal.Title>반응속도 체크 게임</Modal.Title>
+              </Modal.Header>
+
+              <Modal.Body>
+                  <p>파란색 박스를 클릭하여 시작하세요. 박스가 초록색으로 바뀌면 바로 클릭하세요!</p>
+                  <p>당신의 반응속도가 얼마나 빠른지 알려줍니다.</p>
+              </Modal.Body>
+
+              <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleClose}>Close</Button>
+              </Modal.Footer>
+          </Modal>
+        </div>
+        <div className='ResponseCheck'>
         <div className='Response_Phone'>
             <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
               {message}
@@ -101,6 +122,7 @@ class BokseupResponseCheck extends Component {
                 ))}
               </div>
             </div>
+          </div>
           </div>
       </>
     );

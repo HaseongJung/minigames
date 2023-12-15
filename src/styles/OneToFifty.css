@@ -2,7 +2,7 @@
 
 .OneToFifty{
   display: flex;
-
+  justify-content: center;
 }
 
 .OneToFifty_Phone{
@@ -12,7 +12,6 @@
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
   text-align: center; 
-  margin-left: 30%;
 }
 
 

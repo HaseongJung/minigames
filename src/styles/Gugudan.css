@@ -4,6 +4,7 @@
 
 .Gugudan{
   display: flex;
+  justify-content: center;
 }
 
 .Gugudan_Phone{
@@ -13,7 +14,6 @@
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
   text-align: center; 
-  margin-left: 30%;
   /*box-shadow:3px 3px 3px 3px #999;*/
 }
 
@@ -27,10 +27,7 @@
   text-align: center; 
 }
 
-.gugudan{
-  margin-top: 70px;
 
-}
 
 .Gugudan_Score{
   margin-left: 20px;

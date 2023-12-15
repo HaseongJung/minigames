@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useReducer, useCallback } from 'react';
 import Table from '../components/Table';
 import '../styles/Tictactoe.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 
 const initialState = {
   winner: '',
@@ -106,8 +109,29 @@ const Tictactoe = () => {
       }
   }, [recentCell]);
 
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+
+
   return(
-      <div className='Tictactoe'>
+      <div className='Container'>
+        <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+                <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
+                    <Modal.Header closeButton>
+                        <Modal.Title>틱택토 게임 (3목)</Modal.Title>
+                    </Modal.Header>
+
+                    <Modal.Body>
+                        <p>오목과 아주 유사한 형태인 추상전략 보드 게임입니다. 3목이라고도 합니다.</p>
+                        <p>가로 세로 대각선 중 어느 한 방향으로라도 먼저 3개가 이어지게 만들면 승리합니다!</p>
+                    </Modal.Body>
+
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>Close</Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+            <div className='Tictactoe'>
         <div className='Tictactoe_Phone'>
             <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
             {(winner==="nobody") ? <div><h2>무승부!</h2></div> : (winner==='') ? <div></div> : winner && <div><h2>{winner}님의 승리!</h2></div>}
@@ -119,6 +143,7 @@ const Tictactoe = () => {
                     <p key={index} div className='Tictactoe_Result'> {index + 1} 번 게임: {record}</p>
                     ))}
                 </div>
+            </div>
             </div>
       </div>
   );

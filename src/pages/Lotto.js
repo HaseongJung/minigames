@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo, memo } from 'react';
 import '../styles/Lotto.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import "../styles/Modal.css";
 
 function getWinNumbers() {
   const balls = Array(45)
@@ -114,8 +117,28 @@ const Lotto = () => {
     setUserNumbers(newUserNumbers);
   };
 
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+
   return (
-    <div className='Lotto'>
+    <div className='Container'>
+      <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+        <Modal className="my-modal" show={show} onHide={handleClose} centered>
+            <Modal.Header closeButton>
+                <Modal.Title>구구단 게임</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <p>주어진 문제에 대한 답을 입력하고 Enter를 누르세요!</p>
+                <p>정답/오답에 따라 스코어가 반영됩니다!</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+      </div>
+      <div className='Lotto'>
       <div className='Lotto_Phone'>
           <div className='Lotto_Display'>
           {start && <div className='Winning'>당첨 숫자</div>}
@@ -148,6 +171,7 @@ const Lotto = () => {
             ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

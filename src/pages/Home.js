@@ -12,7 +12,8 @@ import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return(
-    <div>
+    <div className='Container'>
+      <h1 className='Home_h1'>Mini games</h1>
       <div className="Choice">
           <table className='Home_table'>
             <tr className='Home_tr'>

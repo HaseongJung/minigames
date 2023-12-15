@@ -3,14 +3,23 @@
   width: 600px;
   height: 600px;
 }
-
 .Home_table{
   width: 500px;
   height: 500px;
   border-collapse: separate;
   border-spacing: 20px;
+  background-color: #FFE7E7;
+  margin-top: 30px;
+  border-radius: 5%;
 }
 .Home_tr, .Home_td{
   border: 1px solid #000;
   border-radius: 20px;
+  background-color: white;
 } 
+
+.Home_h1 {
+  text-align: center;
+  font-weight: 600;
+  /* font-size: 3em; */
+}

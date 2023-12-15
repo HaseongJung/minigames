@@ -1,10 +1,10 @@
 .NumBaseball{
   display: flex;
+  justify-content: center;
 }
 
 .NumBaseball_Phone{
   background-color: #FFE7E7;
-  margin-left: 30%;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 

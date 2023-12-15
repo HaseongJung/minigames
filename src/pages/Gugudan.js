@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Gugudan.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import "../styles/Modal.css";
 
 const Gugudan = () => {
   const [first, setFirst] = useState(Math.ceil(Math.random() * 9));
@@ -46,8 +49,27 @@ const Gugudan = () => {
     setGameOver(false);
   }
 
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+
   return (
-    <div className='Gugudan'>
+    <div className='Container'>
+      <div className="modal show" style={{ display: 'block', position: 'initial' }} >
+        <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
+            <Modal.Header closeButton>
+                <Modal.Title>구구단 게임</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <p>주어진 구구단문제에 대한 답을 입력하고 Enter를 누르세요!</p>
+                <p>정답/오답에 따라 스코어가 반영됩니다!</p>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+      <div className='Gugudan'>
       <div className='Gugudan_Phone'>
         <div className='Gugudan_Display'>
           <div className="gugudan">
@@ -80,6 +102,8 @@ const Gugudan = () => {
                 </div>
             </div>
       </div>
+      </div>
+    </div>
   );
 };
 

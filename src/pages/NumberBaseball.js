@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/NumberBaseball.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import "../styles/Modal.css";
 
 function ranmderNumber() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -68,9 +71,31 @@ class NumberBaseball extends Component {
     });
   };
 
+  handleClose = () => this.setState({show: false});
+  
   render() {
     return (
-      <div className='NumBaseball'>
+      <div className='Container'>
+        <div className="modal show" style={{ display: 'block', position: 'initial' }} >
+          <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="xl" centered>
+              <Modal.Header closeButton>
+                  <Modal.Title>숫자야구 게임</Modal.Title>
+              </Modal.Header>
+
+              <Modal.Body>
+                  <p>컴퓨터가 생각한 4자리 숫자를 정확하게 맞추면 되는 게임입니다.</p><br/>
+                  <p>참여자가 4자리 숫자를 입력하면, 컴퓨터는 자신이 생각한 숫자와 비교해서 숫자와 자리가 정확하게 일치한 숫자의 개수를 스트라이크(S)로 알려 줍니다.</p>
+                  <p>숫자는 일치하지만 자리가 일치하지 않는 숫자의 개수는 볼(B) 에 표시해 줍니다.</p>
+                  <p>그리고 일치하지 않는 숫자의 개수는 아웃(OUT) 에 표시해 줍니다.</p><br/>
+                  <p>그럼 이제 4자리의 숫자를 맞혀보세요!</p>
+              </Modal.Body>
+
+              <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleClose}>Close</Button>
+              </Modal.Footer>
+          </Modal>
+        </div>
+        <div className='NumBaseball'>
         <div className='NumBaseball_Phone'>
           <div className='NumBaseball_Display'>
             <div className='Form'>
@@ -101,6 +126,7 @@ class NumberBaseball extends Component {
             ))}
           </div>
         </div>
+      </div>
       </div>
     );
   }
