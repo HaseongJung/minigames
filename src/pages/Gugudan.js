@@ -43,14 +43,13 @@ const Gugudan = () => {
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
   const resetGame = () => {
-  setFirst(Math.ceil(Math.random() * 9));
-  setSecond(Math.ceil(Math.random() * 9));
-  setValue('');
-  setResult('🙄');
-  setScore(0);
-  setGameOver(false);
-}
-  
+    setFirst(Math.ceil(Math.random() * 9));
+    setSecond(Math.ceil(Math.random() * 9));
+    setValue('');
+    setResult('🙄');
+    setScore(0);
+    setGameOver(false);
+  }
 
   return (
     <div className='Gugudan'>
