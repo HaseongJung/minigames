@@ -27,7 +27,7 @@ const HomePage = () => {
 // 구구단 게임 페이지
 const GugudanPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>구구단</h1>
       <Gugudan/>
     </div>
@@ -36,7 +36,7 @@ const GugudanPage = () => {
 // 끝말잇기 게임 페이지
 const WordRelayPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>끝말잇기</h1>
       <WordRelay/>
     </div>
@@ -45,7 +45,7 @@ const WordRelayPage = () => {
 // 숫자야구 게임 페이지
 const NumberBaseballPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{ padding: 20, margin:'auto', width:'80%'}}>
       <h1>숫자야구</h1>
       <NumberBaseball/>
     </div>
@@ -54,7 +54,7 @@ const NumberBaseballPage = () => {
 // 반응속도 체크 게임 페이지
 const ResponseCheckPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>반응속도 체크</h1>
       <BokseupResponseCheck/>
     </div>
@@ -63,7 +63,7 @@ const ResponseCheckPage = () => {
 // 가위바위보 게임 페이지
 const RSPPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>가위바위보</h1>
       <RSP/>
     </div>
@@ -72,7 +72,7 @@ const RSPPage = () => {
 // 로또 추첨기 페이지
 const LottoPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>로또 추첨기</h1>
       <Lotto/>
     </div>
@@ -81,7 +81,7 @@ const LottoPage = () => {
 // 1~50 숫자세기 게임 페이지
 const OneToFiftyPage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>1~50 숫자세기</h1>
       <OneToFifty/>
     </div>
@@ -99,7 +99,7 @@ const QuizPage = () => {
 // 틱택토 게임 페이지
 const TictactoePage = () => {
   return(
-    <div style={{padding: 20}}>
+    <div style={{padding: 20, margin:'auto', width:'80%'}}>
       <h1>틱택토 (3목 게임, 2인용)</h1>
       <Tictactoe />
     </div>

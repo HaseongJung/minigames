@@ -87,7 +87,7 @@ function Board({ numbers, handleClick }) {
   );
 }
 
-function Timer() {
+function Timer({ setRecord, gameFlag }) {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const record = useRef();
   record.current = timeElapsed;
@@ -96,10 +96,12 @@ function Timer() {
       setTimeElapsed(timeElapsed => timeElapsed + 30);
     }, 30);
     return () => {
-      alert("Your Record :" + record.current / 1000);
+      if (gameFlag) { // 게임이 진행 중일 때만 기록 저장
+        setRecord(record.current / 1000);
+      }
       clearInterval(timer);
     };
-  }, []);
+  }, [gameFlag]); // gameFlag가 변경될 때마다 useEffect 재실행
   return (
     <TimerContainer>
       <Front>{Math.floor(timeElapsed / 1000)}:</Front>
@@ -112,6 +114,14 @@ function OneToFifty() {
   const [numbers, setNumbers] = useState(array);
   const [gameFlag, setGameFlag] = useState(false);
   const [current, setCurrent] = useState(1);
+  const [records, setRecords] = useState([]); // 기록을 저장할 state 추가
+
+  const setRecord = (record) => { // 기록을 저장하는 함수
+    if (record > 0) { // 기록이 0초가 아닐 때만 기록 저장
+      setRecords(oldRecords => [...oldRecords, record]);
+    }
+  }
+
   const handleClick = num => {
     if (num === current && gameFlag) {
       if (num === 50) {
@@ -127,26 +137,39 @@ function OneToFifty() {
       setCurrent(current => current + 1);
     }
   };
+  
   const startGame = () => {
     setNumbers(shuffleArray(array));
     setCurrent(1);
     setGameFlag(true);
   };
+  
   const endGame = () => {
     setGameFlag(false);
   };
 
   return (
-    <div className="Phone">
-  
+    <div className="OneToFifty">
+      <div className="OneToFifty_Phone">
         <Container>
           <Board numbers={numbers} handleClick={handleClick}></Board>
-          {gameFlag ? (
-            <Timer />
-          ) : (
-            <StartButton onClick={startGame}>Start</StartButton>
-          )}
+          {
+            gameFlag ? (
+              <Timer setRecord={setRecord} gameFlag={gameFlag} />
+            ) : (
+              <StartButton onClick={startGame} className="OneToFifty_Button">Start</StartButton>
+            )
+          }
         </Container>
+      </div>
+        <div className="OneToFifty_Score">
+          <div className="OneToFifty_Records">
+            <h2>⭐게임 스코어⭐</h2>
+            {records.sort((a, b) => a - b).map((record, index) => (
+              <p key={index} className="OneToFifty_Rank">{index + 1}등:  {record}</p>
+            ))}
+          </div>
+      </div>
     </div>
   );
 }

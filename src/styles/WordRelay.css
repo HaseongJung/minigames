@@ -1,4 +1,4 @@
-.Phone{
+.WordRelay_Phone{
   background-color: #FFE7E7;
   margin: auto;
   width: 500px;
@@ -6,9 +6,10 @@
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
   text-align: center; 
+  margin-left:33%;
 }
 
-.Display{
+.WordRelay_Display{
   background-color: #FFFFFF;
   margin: 50px auto auto auto;
   width: 400px;
