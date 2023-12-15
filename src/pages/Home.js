@@ -4,7 +4,7 @@ import gugudan from '../assets/gugudan.png';
 import Lotto from '../assets/lotto.png';
 import RSP from '../assets/RSP.png';
 import Tictactoe from '../assets/tictactoe.png';
-import WordRelay from '../assets/W.png';
+import WordRelay from '../assets/W.png';  
 import OneToFifty from '../assets/OneToFifty.png';
 import Quiz from '../assets/quiz.png';
 import timer from '../assets/timer.png';
@@ -12,7 +12,8 @@ import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return(
-    <div>
+    <div className='Container'>
+      <h1 className='Home_h1'>Mini games</h1>
       <div className="Choice">
           <table className='Home_table'>
             <tr className='Home_tr'>
@@ -21,7 +22,7 @@ const Home = () => {
               <td className='Home_td'><NavLink to='/lotto'><img src={Lotto} width='100' height='100' alt='Lotto'/></NavLink></td>
             </tr>
             <tr className='Home_tr'>
-              <td className='Home_td'><NavLink tp='/RSP'><img src={RSP} width='100' height='100' alt='RSP'/></NavLink></td>
+              <td className='Home_td'><NavLink to='/RSP'><img src={RSP} width='100' height='100' alt='RSP'/></NavLink></td>
               <td className='Home_td'><NavLink to= '/oneToFIfty'><img src={OneToFifty} width='100' height='100' alt = 'OneToFifty'/></NavLink></td>
               <td className='Home_td'><NavLink to='/quiz'><img src={Quiz} width='100' height='100' alt = 'Quiz'/></NavLink></td>
             </tr>
