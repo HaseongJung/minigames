@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import '../styles/OneToFifty.css'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import "../styles/Modal.css";
 
 let array = [];
 for (let i = 1; i <= 25; i++) {
@@ -139,37 +136,17 @@ function OneToFifty() {
     setGameFlag(false);
   };
 
-  const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
-
   return (
-    <div className='container'>
-      <div className="modal show" style={{ display: 'block', position: 'initial' }}>
-        <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
-            <Modal.Header closeButton>
-                <Modal.Title>1~50 숫자세기 게임</Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-                <p>최대한 빠르게 1부터 50까지의 숫자를 순서대로 클릭하는 게임입니다.</p>
-                <p>start버튼을 눌러 시작하세요! 스톱워치가 시작됩니다!</p>
-            </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>Close</Button>
-            </Modal.Footer>
-        </Modal>
-      </div>
-      <div className="Phone">
-          <Container>
-            <Board numbers={numbers} handleClick={handleClick}></Board>
-            {gameFlag ? (
-              <Timer />
-            ) : (
-              <StartButton onClick={startGame}>Start</StartButton>
-            )}
-          </Container>
-      </div>
+    <div className="Phone">
+  
+        <Container>
+          <Board numbers={numbers} handleClick={handleClick}></Board>
+          {gameFlag ? (
+            <Timer />
+          ) : (
+            <StartButton onClick={startGame}>Start</StartButton>
+          )}
+        </Container>
     </div>
   );
 }

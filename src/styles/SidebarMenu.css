@@ -1,6 +1,7 @@
 .sidebar {
     height: 100vh;
     font-size: 1.2em;
+    font-family: "BH HANNA 11yrs old";
 }
 .menu {
     width: 100%;
@@ -15,8 +16,4 @@
 }
 ul {
     width: 100%;
-}
-
-span {
-    font-family: "BMHANA";
 }

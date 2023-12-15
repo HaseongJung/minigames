@@ -1,6 +1,7 @@
-.App, div, span, h1 {
+.App {
   text-align: center;
-  font-family: "BMHANA";
+  display: flex;
+  flex-direction: row;
 }
 
 .App-logo {
@@ -47,29 +48,3 @@
 .css-nwj8xd >.ps-menu-button {
   height: 70px;
 }
-
-.Container {
-  width: 100%;
-  height: auto;
-  padding: 0 !important;
-  margin: 0 !important;
-  background-color: #FFF6F6;
-  font-family: "BMHANA";
-} 
-
-.GameName {
-  height: 100px;
-  margin-bottom: 100px;
-  background-color: #FFE7E7;
-  color: black;
-  padding: 15px 0px 15px 0;
-  font-weight: 700;
-  font-size: 3em;
-  border : 10px solid #FFDFDF;
-  font-family: "BMHANA";
-}
-
-.Container2 {
-  height: 100%;
-}
-

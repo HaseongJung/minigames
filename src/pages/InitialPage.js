@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Initial.css'; // CSS 파일을 import 합니다.
 
 function InitialPage() {
-  const content = "HELLO,\nMINI GAME WORLD!";
+  const content = "HELLO,\nMINI GAME WORDL!";
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
