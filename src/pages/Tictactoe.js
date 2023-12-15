@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useReducer, useCallback } from 'react';
 import Table from '../components/Table';
-import '../styles/Tictactoe.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import '../styles/Tictactoe.css';
 
 
 const initialState = {
@@ -134,7 +134,7 @@ const Tictactoe = () => {
             <div className='Tictactoe'>
         <div className='Tictactoe_Phone'>
             <Table onClick={onClickTable} tableData={tableData} dispatch={dispatch} />
-            {(winner==="nobody") ? <div><h2>무승부!</h2></div> : (winner==='') ? <div></div> : winner && <div><h2>{winner}님의 승리!</h2></div>}
+            {(winner==="nobody") ? <div className='TTT_R'><h2>무승부!</h2></div> : (winner==='') ? <div className='TTT_R'></div> : winner && <div className='TTT_R'><h2>{winner}님의 승리!</h2></div>}
         </div>
         <div className='Tictactoe_Score'>
                 <div className='Tictactoe_Records'>
@@ -146,7 +146,7 @@ const Tictactoe = () => {
             </div>
             </div>
       </div>
-  );
+    );
 };
 
 export default Tictactoe;

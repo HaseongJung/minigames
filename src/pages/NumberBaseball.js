@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../styles/NumberBaseball.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -23,6 +23,7 @@ class NumberBaseball extends Component {
     result: '',
     quiz: ranmderNumber(),
     tries: [],
+    show: true,
     triesCount: [],
   };
 
@@ -64,7 +65,7 @@ class NumberBaseball extends Component {
       }
     }
   };
-
+  
   onChange = (e) => {
     this.setState({
       userInput: e.target.value,
@@ -105,7 +106,7 @@ class NumberBaseball extends Component {
               </form>
             </div>
             <br/>
-            <div>시도 : {this.state.tries.length}</div>
+            <div className='NumBaseball_Try'>시도 : {this.state.tries.length}</div>
             <div><br/>{this.state.result}</div>
           </div>
           <ul>

@@ -57,31 +57,31 @@ function RSP() {
         </Modal>
       </div>
       <div className='RSP'>
-      <div className='RSP_Phone'>
-        <div className='RSP_Display'>
-          <section className="container">
-            <div className="result_field">
-              <div className="result_images">
-                <span className="user_result">
-                  <img src={userChoice} alt="" />
-                </span>
-                <span className="cpu_result">
-                  <img src={cpuChoice} alt="" />
-                </span>
+        <div className='RSP_Phone'>
+          <div className='RSP_Display'>
+            <section className="container">
+              <div className="result_field">
+                <div className="result_images">
+                  <span className="user_result">`
+                    <img src={userChoice} alt="" />
+                  </span>
+                  <span className="cpu_result">
+                    <img src={cpuChoice} alt="" />
+                  </span>
+                </div>
+                <div className="result">{result}</div>
               </div>
-              <div className="result">{result}</div>
-            </div>
-          </section>
-          <div className="option_images">
-              {images.map((image, index) => (
-                <span className="option_image" key={index} onClick={() => onClickImage(index)}>
-                  <img src={image} alt="" />
-                  <p>{options[index]}</p>
-                </span>
-              ))}
-            </div>
+            </section>
+            <div className="option_images">
+                {images.map((image, index) => (
+                  <span className="option_image" key={index} onClick={() => onClickImage(index)}>
+                    <img src={image} alt="" />
+                    <p>{options[index]}</p>
+                  </span>
+                ))}
+              </div>
+          </div>
         </div>
-      </div>
       <div className='RSP_Score'>
         <div className='RSP_Records'>
           <h2>⭐게임 스코어⭐</h2>

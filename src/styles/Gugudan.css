@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+h2{
+  font-family: "BMHANA";
+}
+
 .Gugudan_Phone{
   background-color: #FFE7E7;
   width: 500px;
@@ -27,7 +31,21 @@
   text-align: center; 
 }
 
+.gugudan-form{
+  margin-top: 125px;
+}
 
+.gugudan_question{
+  font-size: 200%;
+  font-weight: bold;
+}
+
+
+.Now_Gugudan_score{
+  margin-top: 180px;
+  font-weight: bold;
+  font-size: 250%;
+}
 
 .Gugudan_Score{
   margin-left: 20px;
@@ -70,7 +88,12 @@
 }
 
 .Gugudan_rank{
-
   padding: 20px;
   font-weight: bold;
+}
+
+
+.Gugudan_result{
+  margin-top: 10px;
+  font-size: 400%;
 }

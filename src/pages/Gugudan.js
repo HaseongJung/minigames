@@ -40,6 +40,8 @@ const Gugudan = () => {
     setValue(event.target.value);
   };
 
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
   const resetGame = () => {
     setFirst(Math.ceil(Math.random() * 9));
     setSecond(Math.ceil(Math.random() * 9));
@@ -48,9 +50,6 @@ const Gugudan = () => {
     setScore(0);
     setGameOver(false);
   }
-
-  const [show, setShow] = useState(true);
-  const handleClose = () => setShow(false);
 
   return (
     <div className='Container'>
@@ -74,7 +73,7 @@ const Gugudan = () => {
         <div className='Gugudan_Display'>
           <div className="gugudan">
             <form onSubmit={onFormSubmit} className="gugudan-form">
-              <span className="question">
+              <span className="gugudan_question">
                 {first} x {second} ={' '}
               </span>
               <input
@@ -87,8 +86,8 @@ const Gugudan = () => {
                 disabled={gameOver}
               ></input>
             </form>
-            <div className="result">{result}</div>
-            <div className="score">Score: {score}</div>
+            <div className="Now_Gugudan_score">Score: {score}</div>
+            <div className="Gugudan_result">{result}</div>
             {gameOver && <button className="Gugudan_Button" onClick={resetGame}>다시하기</button>}
           </div>
         </div>

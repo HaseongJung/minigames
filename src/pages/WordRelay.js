@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import '../styles/WordRelay.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import "../styles/Modal.css";
+
 
 const WordRelay = () => {
   const [word, setWord] = useState('밍주');
@@ -12,12 +14,12 @@ const WordRelay = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     if (word[word.length - 1] === value[0]) {
-      setResult('딩동댕');
+      setResult('딩동댕🎵🎶');
       setWord(value);
       setValue('');
       inputEl.current.focus();
     } else {
-      setResult('땡');
+      setResult('❌땡❌');
       setValue('');
       inputEl.current.focus();
     }
@@ -47,16 +49,16 @@ const WordRelay = () => {
     <div className='WordRelay_Phone'>
       <div className='WordRelay_Display'>
         <div className='WordGame'>
-          <div>{word}</div>
-            <form onSubmit={onSubmitForm}>
+          <h3>제시어: {word}</h3>
+            <form onSubmit={onSubmitForm} className='Word_Form'>
               <input
                 ref={inputEl}
                 value={value}
                 onChange={(e) => setValue(e.currentTarget.value)}
               />
-              <button>입력!</button>
+              <button className='Word_Form_btn'>입력!</button>
             </form>
-            <div>{result}</div>
+            <div className='WordRelay_Result'>{result}</div>
         </div>
       </div>
     </div>

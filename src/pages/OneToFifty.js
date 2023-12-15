@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "../styles/Modal.css";
 
-
 let array = [];
 for (let i = 1; i <= 25; i++) {
   array.push(i);
@@ -175,16 +174,14 @@ function OneToFifty() {
       </div>
       <div className="OneToFifty">
       <div className="OneToFifty_Phone">
-        <Container>
-          <Board numbers={numbers} handleClick={handleClick}></Board>
-          {
-            gameFlag ? (
-              <Timer setRecord={setRecord} gameFlag={gameFlag} />
+          <Container>
+            <Board numbers={numbers} handleClick={handleClick}></Board>
+            {gameFlag ? (
+              <Timer />
             ) : (
-              <StartButton onClick={startGame} className="OneToFifty_Button">Start</StartButton>
-            )
-          }
-        </Container>
+              <StartButton onClick={startGame}>Start</StartButton>
+            )}
+          </Container>
       </div>
         <div className="OneToFifty_Score">
           <div className="OneToFifty_Records">

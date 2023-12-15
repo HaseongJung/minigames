@@ -26,13 +26,14 @@
 
 .Form{
   width: 100%;
-  margin-top: 50px;
+  margin-top: 125px;
 }
 
 ul{
   list-style: decimal;
   width: 400px;
   margin: 20px auto auto auto;
+  font-family: "BMHANNA";
 }
 .TriesCount{
   margin-left: 20px;
@@ -50,4 +51,9 @@ ul{
 .NumBaseball_Result{
   padding: 20px;
   font-weight: bold;
+  font-family: "BMHANNA";
+}
+
+.NumBaseball_Try{
+  font-size: 200%;
 }

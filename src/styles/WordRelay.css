@@ -21,3 +21,26 @@
 .WordGame{
   margin-top: 70px;
 }
+
+.Word_Form{
+  margin-top: 50px;
+}
+
+input{
+  background-color: #E9F4FF;
+  border-radius: 10px;
+  font-family: "BMHANA";
+}
+
+.Word_Form_btn{
+  border-radius: 10px;
+}
+
+h3{
+  font-family: "BMHANA";
+}
+
+.WordRelay_Result{
+  margin-top: 175px;
+  font-size: 500%;
+}

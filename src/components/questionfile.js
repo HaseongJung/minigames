@@ -22,8 +22,8 @@ export const questions = [
   {
       questionText: '2023년도 2학기 기말고사 마지막 날짜는?',
       answerOptions: [
-          { answerText: '12월 18일', isCorrect: true },
-          { answerText: '12월 19일', isCorrect: false },
+          { answerText: '12월 18일', isCorrect: false },
+          { answerText: '12월 19일', isCorrect: true },
           { answerText: '12월 20일', isCorrect: false },
           { answerText: '12월 21일', isCorrect: false },
           { answerText: '12월 22일', isCorrect: false },

@@ -12,6 +12,8 @@ import RSPLogo from './RSPLogo';
 import LottoLogo from './LottoLogo';
 import OneToFiftyLogo from './OneToFiftyLogo';
 import TictactoeLogo from './TictactoeLogo';
+import QuizLogo from './QuizLogo';
+
 
 const SidebarMenu = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -50,6 +52,7 @@ const SidebarMenu = () => {
           <MenuItem className="menuItem" icon=<LottoLogo/> active={selected === "lotto"} onClick={()=>setSelected("lotto")} component={<Link to="/lotto" />}> 로또 추첨기</MenuItem>
           <MenuItem className="menuItem" icon=<OneToFiftyLogo/> active={selected === "oneToFifty"} onClick={()=>setSelected("oneToFifty")} component={<Link to="/oneToFifty" />}> 1~50숫자 세기</MenuItem>
           <MenuItem className="menuItem" icon=<TictactoeLogo/> active={selected === "tictactoe"} onClick={()=>setSelected("tictactoe")} component={<Link to="/tictactoe" />}> 틱택토</MenuItem>
+          <MenuItem className="menuItem" icon=<QuizLogo/> active={selected === "quiz"} onClick={()=>setSelected("quiz")} component={<Link to="/quiz" />}> 퀴즈</MenuItem>
         </Menu>
       </Sidebar>
   </>

@@ -12,10 +12,11 @@ import Gugudan from './pages/Gugudan';
 import WordRelay from './pages/WordRelay';
 import NumberBaseball from './pages/NumberBaseball';
 import InitialPage from './pages/InitialPage';
-import Home from './pages/Home';
 import Quiz from './pages/Quiz';
+import Home from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuizApp from './pages/Quiz';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //로딩 페이지
@@ -118,7 +119,6 @@ const TictactoePage = () => {
     </div>
   );
 }
-
 // 404 페이지
 const NoPage = () => {
   return(
@@ -129,24 +129,25 @@ const NoPage = () => {
 }
 
 function App() {
+
   return (
     <div style={{display: "flex"}}>
       <Router>
         <Sidebar style={{width: "3000px"}}/>
-          <Routes>
-            <Route path='/' element={<Initial/>} />
-            <Route path='/home' element={<HomePage/>} />
-            <Route path='/gugudan' element={<GugudanPage/>} />
-            <Route path='/wordRelay' element={<WordRelayPage/>} />
-            <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
-            <Route path='/responseCheck' element={<ResponseCheckPage/>} />
-            <Route path='/RSP' element={<RSPPage/>} />
-            <Route path='/lotto' element={<LottoPage/>} />
-            <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
-            <Route path='/tictactoe' element={<TictactoePage/>} />
-            <Route path='/quiz' element={<Quiz/>} />
-            <Route path='/*' element={<NoPage/>} />
-          </Routes> 
+        <Routes>
+          <Route path='/' element={<Initial/>}/>
+          <Route path='/home' element={<HomePage/>} />
+          <Route path='/gugudan' element={<GugudanPage/>} />
+          <Route path='/wordRelay' element={<WordRelayPage/>} />
+          <Route path='/numberBaseball' element={<NumberBaseballPage/>} />
+          <Route path='/responseCheck' element={<ResponseCheckPage/>} />
+          <Route path='/RSP' element={<RSPPage/>} />
+          <Route path='/lotto' element={<LottoPage/>} />
+          <Route path='/oneToFifty' element={<OneToFiftyPage/>} />
+          <Route path='/tictactoe' element={<TictactoePage/>} />
+          <Route path='/quiz' element={<QuizPage/>} />
+          <Route path='/*' element={<NoPage/>} />
+        </Routes> 
       </Router>
     </div>
   );

@@ -36,7 +36,7 @@ body {
   }
   
   td {
-    border: 1px solid black;
+    border: 1px solid black !important;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -56,4 +56,8 @@ body {
   .Tictactoe_Result{
     padding: 20px;
     font-weight: bold;
+  }
+
+  .TTT_R{
+    margin-top: 50px;
   }

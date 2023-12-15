@@ -52,11 +52,11 @@
   display: table-cell;
   position: relative;
   border: 3px solid #f199bc;
-  color: #6e6e6e;
+  color: #000000;
   position: relative;
   padding: 15px 30px;
   border-radius: 15px;
-  font-family: "paybooc-Light", sans-serif;
+  font-family: "BMHANNA";
   /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
   text-decoration: none;
   font-weight: 600;
@@ -64,7 +64,9 @@
 }
 .Lotto_Re_Button:hover {
   background-color: #f199bc;
-  color: #d4dfe6;
+  color: #000000;
+  font-family: "BMHANNA";
+
 }
 .Lotto_Re_Button:active {
   transform: scale(1.5);

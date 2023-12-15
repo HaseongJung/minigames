@@ -1,5 +1,5 @@
 //QuizApp.js
-import { questions } from "../components/questionfile";
+import { questions } from "../components/Questionfile";
 import { useState } from "react";
 import "../styles/Quiz.css";
 import Button from 'react-bootstrap/Button';
@@ -30,7 +30,7 @@ export default function QuizApp() {
         setQno(qno+1);
         if(qno === questions.length){ //마지막 문제인 경우  
             setEndQuiz(true);
-            alert("당신의 점수는 " + score + "점 입니다.");
+
         }
     }
 

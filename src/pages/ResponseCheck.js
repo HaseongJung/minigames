@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../styles/ResponseCheck.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -10,6 +10,7 @@ class BokseupResponseCheck extends Component {
       message: '클릭해서 시작하기',
       bgColorState: 'waiting',
       result: [],
+      show: true,
       resultHistory: [],
     };
   }
