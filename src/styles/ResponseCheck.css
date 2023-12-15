@@ -1,14 +1,34 @@
-.Phone{
+.ResponseCheck{
+  display: flex;
+}
+
+.Response_Phone{
   background-color: #FFE7E7;
-  margin: auto;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
-  text-align: center; 
+  text-align: center;
+  margin-left: 30%; 
 }
 
 .Result{
   margin-top: 50px;
   font-size: x-large;
+}
+
+.Response_Score{
+  margin-left: 20px;
+  width: 300px;
+  background-color: #FFE7E7;
+  border-radius: 30px;
+}
+
+.Response_Records{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.Response_rank{
+  padding: 20px;
+  font-weight: bold;
 }

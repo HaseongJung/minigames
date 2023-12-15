@@ -1,14 +1,20 @@
-.Phone{
+.NumBaseball{
+  display: flex;
+}
+
+.NumBaseball_Phone{
   background-color: #FFE7E7;
-  margin: auto;
+  margin-left: 30%;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
-  text-align: center; 
+  text-align: center;
+
+  
 }
 
-.Display{
+.NumBaseball_Display{
   background-color: #FFFFFF;
   margin: 50px auto auto auto;
   width: 400px;
@@ -27,4 +33,21 @@ ul{
   list-style: decimal;
   width: 400px;
   margin: 20px auto auto auto;
+}
+.TriesCount{
+  margin-left: 20px;
+  background-color: #FFE7E7;
+  border-radius: 30px;
+  width: 300px;
+}
+
+.TriesRecords{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  /*box-shadow:3px 3px 3px 3px #999;*/
+}
+
+.NumBaseball_Result{
+  padding: 20px;
+  font-weight: bold;
 }

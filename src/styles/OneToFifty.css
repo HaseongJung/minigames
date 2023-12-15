@@ -1,19 +1,57 @@
-.Phone{
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+.OneToFifty{
+  display: flex;
+
+}
+
+.OneToFifty_Phone{
   background-color: #FFE7E7;
-  margin: auto;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
   text-align: center; 
+  margin-left: 30%;
 }
 
-.Display{
-  background-color: #FFFFFF;
-  margin: 49px auto auto auto;
-  width: 400px;
-  height: 400px;
-  border: 2px solid #FFFFFF; 
-  border-radius: 50px;
-  text-align: center; 
+
+.OneToFifty_Button{
+  box-sizing: border-box;
+  text-align: center;
+  display: table-cell;
+  position: relative;
+  border: 3px solid #f199bc;
+  color: #6e6e6e;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.OneToFifty_Button:hover {
+  background-color: #f199bc;
+  color: #d4dfe6;
+}
+.OneToFifty_Button:active {
+  transform: scale(1.5);
+}
+
+.OneToFifty_Score{
+  margin-left: 20px;
+  width: 300px;
+  background-color: #FFE7E7;
+  border-radius: 30px;
+}
+
+.OneToFifty_Records{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.OneToFifty_Rank{
+  padding: 20px;
+  font-weight: bold;
 }

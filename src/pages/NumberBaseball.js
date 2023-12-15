@@ -24,31 +24,32 @@ class NumberBaseball extends Component {
     quiz: ranmderNumber(),
     tries: [],
     show: true,
+    triesCount: [],
   };
 
   onSubmit = (e) => {
     e.preventDefault();
     if (this.state.quiz.join('') === this.state.userInput) {
-      this.setState({
+      this.setState((prevState) => ({
         result: '홈런!',
         userInput: '',
         quiz: ranmderNumber(),
-        tries: [...this.state.tries, { try: this.state.userInput, result: '홈런!' }],
-      });
+        tries: [],
+        triesCount: [...prevState.triesCount, prevState.tries.length + 1],
+      }));
     } else {
       const userInputArray = this.state.userInput.split('').map((v) => parseInt(v));
       let strike = 0;
       let ball = 0;
       if (this.state.tries.length >= 9) {
-        this.setState({
+        this.setState((prevState) => ({
           result: `10번 넘게 시도했습니다. 정답은 ${this.state.quiz.join(',')} 였습니다.`,
-        });
-        alert('게임을 다시 시작합니다.');
-        this.setState({
           userInput: '',
           quiz: ranmderNumber(),
           tries: [],
-        });
+          triesCount: [...prevState.triesCount, 10],
+        }));
+        alert('게임을 다시 시작합니다.');
       } else {
         for (let i = 0; i < 4; i++) {
           if (userInputArray[i] === this.state.quiz[i]) {
@@ -57,10 +58,10 @@ class NumberBaseball extends Component {
             ball += 1;
           }
         }
-        this.setState({
-          tries: [...this.state.tries, { try: this.state.userInput, result: `${strike} 스트라이크, ${ball}볼 입니다.` }],
+        this.setState((prevState) => ({
+          tries: [...prevState.tries, { try: this.state.userInput, result: `${strike} 스트라이크, ${ball}볼 입니다.` }],
           userInput: '',
-        });
+        }));
       }
     }
   };
@@ -75,7 +76,7 @@ class NumberBaseball extends Component {
   
   render() {
     return (
-      <div className='container'>
+      <div className='NumBaseball'>
         <div className="modal show" style={{ display: 'block', position: 'initial' }} >
           <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="xl" centered>
               <Modal.Header closeButton>
@@ -95,8 +96,8 @@ class NumberBaseball extends Component {
               </Modal.Footer>
           </Modal>
         </div>
-        <div className='Phone'>
-          <div className='Display'>
+        <div className='NumBaseball_Phone'>
+          <div className='NumBaseball_Display'>
             <div className='Form'>
               <form onSubmit={this.onSubmit}>
                 <input value={this.state.userInput} onChange={this.onChange} type="number" />
@@ -116,6 +117,14 @@ class NumberBaseball extends Component {
                 );
               })}
             </ul>
+          </div>
+        <div className='TriesCount'>
+          <div className='TriesRecords'>
+            <h2>⭐게임 스코어⭐</h2>
+            {this.state.triesCount.sort((a, b) => a - b).slice(0, 5).map((count, index) => (
+              <div key={index} className='NumBaseball_Result'>{index + 1}등: {count}번 시도</div>
+            ))}
+          </div>
         </div>
       </div>
     );

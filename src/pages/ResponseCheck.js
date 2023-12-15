@@ -11,6 +11,7 @@ class BokseupResponseCheck extends Component {
       bgColorState: 'waiting',
       result: [],
       show: true,
+      resultHistory: [],
     };
   }
 
@@ -35,16 +36,16 @@ class BokseupResponseCheck extends Component {
 
   onClickScreen = () => {
     const { bgColorState } = this.state;
-
+  
     if (bgColorState === 'waiting') {
       this.setState({
         message: '초록색으로 바뀌면 클릭',
         bgColorState: 'ready',
       });
-
+  
       this.timer = setTimeout(() => {
         this.startTime = new Date(); // 시간초 세기 시작
-
+  
         this.setState({
           message: '지금 클릭!',
           bgColorState: 'now',
@@ -52,19 +53,25 @@ class BokseupResponseCheck extends Component {
       }, Math.floor(Math.random() * 1000) + 2000);
     } else if (bgColorState === 'ready') {
       // 빨간색 화면일 때 누르면
-      this.setState({
-        message: '너무 빨리 눌렀음',
-        bgColorState: 'waiting',
-        result: [],
+      this.setState((prevState) => {
+        return {
+          message: '너무 빨리 눌렀음',
+          bgColorState: 'waiting',
+        };
       });
       clearTimeout(this.timer);
     } else if (bgColorState === 'now') {
-      console.log('초록색 일때 클릭');
       // 초록색 화면으로 바뀌었을 때
       this.endTime = new Date();
-
+  
       this.setState((prevState) => {
-        return { message: '클릭해서 시작하기', bgColorState: 'waiting', result: [...prevState.result, this.endTime - this.startTime] };
+        const newResult = this.endTime - this.startTime;
+        return { 
+          message: '클릭해서 시작하기', 
+          bgColorState: 'waiting', 
+          result: [...prevState.result, newResult],
+          resultHistory: [...prevState.resultHistory, newResult]
+        };
       });
     }
   };
@@ -80,10 +87,10 @@ class BokseupResponseCheck extends Component {
   handleClose = () => this.setState({show: false}); // 모달 닫기
 
   render() {
-    const { bgColorState, message, result } = this.state;
+    const { bgColorState, message, result, resultHistory } = this.state;
 
     return (
-      <div className='container'>
+      <div className='ResponseCheck'>
         <div className="modal show" style={{ display: 'block', position: 'initial' }}>
           <Modal className="my-modal" show={this.state.show} onHide={this.handleClose} size="lg" centered>
               <Modal.Header closeButton>
@@ -100,13 +107,23 @@ class BokseupResponseCheck extends Component {
               </Modal.Footer>
           </Modal>
         </div>
-        <div className='Phone'>
+        <div className='Response_Phone'>
+      <>
             <div id="screen" style={this.screenStyle(bgColorState)} onClick={this.onClickScreen}>
               {message}
             </div>
             {result.length === 0 ? null : <div className='Result'> 반응 시간 평균 {this.resultAverage()} ms 걸렸어요.</div>}
           </div>
-      </div>
+          <div className='Response_Score'>
+              <div className='Response_Records'>
+                <h2>⭐게임 스코어⭐</h2>
+                {resultHistory.sort((a,b) => a - b).slice(0, 5).map((time, index) => (
+                  <div key={index} className='Response_rank'> {index + 1}등: {time} ms</div>
+                ))}
+              </div>
+            </div>
+          </div>
+      </>
     );
   }
 }

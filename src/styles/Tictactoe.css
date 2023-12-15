@@ -1,11 +1,15 @@
+.Tictactoe{
+  display: flex;
+}
+
 .Tictactoe_Phone{
   background-color: #FFE7E7;
-  margin: auto;
   width: 500px;
   height: 600px;
   border: 2px solid #FFE7E7; 
   border-radius: 50px;
-  text-align: center; 
+  text-align: center;
+  margin-left: 30%; 
 }
 
 
@@ -27,8 +31,8 @@ body {
     border-collapse: collapse;
     margin: 49px auto auto auto;
     background-color: #FFFFFF;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
   
   td {
@@ -36,4 +40,20 @@ body {
     width: 100px;
     height: 100px;
     text-align: center;
+  }
+
+  .Tictactoe_Score{
+    margin-left: 20px;
+    width: 300px;
+    background-color: #FFE7E7;
+    border-radius: 30px;
+  }
+  
+  .Tictactoe_Records{
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .Tictactoe_Result{
+    padding: 20px;
+    font-weight: bold;
   }

@@ -59,6 +59,7 @@ const Lotto = () => {
   const [winBalls, setWinBalls] = useState([]);
   const [bonus, setBonus] = useState(null);
   const [redo, setRedo] = useState(false);
+  const [resultHistory, setResultHistory] = useState([]);  // 추가된 state
   const timeouts = useRef([]);
 
   const checkWin = () => {
@@ -67,8 +68,10 @@ const Lotto = () => {
     if (JSON.stringify(winNumbersWithoutBonus.sort()) === JSON.stringify(userNumbersWithoutBonus.sort()) 
       && winNumbers[6] === userNumbers[6]) {
       setIsWin(true);
+      setResultHistory(prev => [...prev, 'Win']);  // 결과를 resultHistory에 추가
     } else {
       setIsWin(false);
+      setResultHistory(prev => [...prev, 'Lose']);  // 결과를 resultHistory에 추가
     }
   };
 
@@ -119,7 +122,7 @@ const Lotto = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className='container'>
+    <div className='Lotto'>
       <div className="modal show" style={{ display: 'block', position: 'initial' }}>
         <Modal className="my-modal" show={show} onHide={handleClose} centered>
             <Modal.Header closeButton>
@@ -145,6 +148,9 @@ const Lotto = () => {
           {start && <div className='Bonus'>보너스</div>}
           {bonus && <Ball key={bonus} number={bonus} />}
           <br/>
+          {showResult && (isWin ? <div className='Win'>⭐⭐당첨!⭐⭐</div> : <div className='Lose'>꽝!</div>)}
+          {!start ? <h1 onClick={onClickStart} className='Start'>시작!</h1> : redo && <button onClick={onClickRedo} className='Lotto_Re_Button'>다시!</button>}
+          </div>
           <div className='My'>
           <div className='MySe'>내 번호 입력하기</div>
           {userNumbers.map((number, idx) => (
@@ -156,10 +162,15 @@ const Lotto = () => {
             />
           ))}
           </div>
-          {showResult && (isWin ? <div className='Win'>⭐⭐당첨!⭐⭐</div> : <div className='Lose'>꽝!</div>)}
-          {!start ? <h1 onClick={onClickStart} className='Start'>시작!</h1> : redo && <button onClick={onClickRedo} className='Re'>다시!</button>}
-          </div>
         </div>
+        <div className='Lotto_Score'>
+          <div className='Lotto_Records'>
+            <h2>⭐게임 스코어⭐</h2>
+            {resultHistory.slice(-5).map((outcome, index) => (
+              <div key={index} className='Lotto_Result'> {index + 1}번 게임: {outcome}</div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };

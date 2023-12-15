@@ -10,6 +10,8 @@ const Gugudan = () => {
   const [value, setValue] = useState('');
   const [result, setResult] = useState('🙄');
   const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+  const [finalScores, setFinalScores] = useState([]);
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -24,10 +26,13 @@ const Gugudan = () => {
       setSecond(Math.ceil(Math.random() * 9));
       setValue('');
       setScore(score + 1);
+      setGameOver(false);
     } else {
       setResult('🤔');
       setValue('');
-      setScore(score - 1);
+      setFinalScores([...finalScores, score]);
+      setScore(0);
+      setGameOver(true);
     }
   };
 
@@ -37,9 +42,20 @@ const Gugudan = () => {
 
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
+  const resetGame = () => {
+  setFirst(Math.ceil(Math.random() * 9));
+  setSecond(Math.ceil(Math.random() * 9));
+  setValue('');
+  setResult('🙄');
+  setScore(0);
+  setGameOver(false);
+}
+  
+GameOver(false);
+  }
 
   return (
-    <div className='container'>
+    <div className='Gugudan'>
       <div className="modal show" style={{ display: 'block', position: 'initial' }} >
         <Modal className="my-modal" show={show} onHide={handleClose} size="lg" centered>
             <Modal.Header closeButton>
@@ -56,8 +72,8 @@ const Gugudan = () => {
             </Modal.Footer>
         </Modal>
       </div>
-      <div className='Phone'>
-        <div className='Display'>
+      <div className='Gugudan_Phone'>
+        <div className='Gugudan_Display'>
           <div className="gugudan">
             <form onSubmit={onFormSubmit} className="gugudan-form">
               <span className="question">
@@ -70,14 +86,24 @@ const Gugudan = () => {
                 onChange={onInputChange}
                 className="answer"
                 required
+                disabled={gameOver}
               ></input>
             </form>
             <div className="result">{result}</div>
             <div className="score">Score: {score}</div>
+            {gameOver && <button className="Gugudan_Button" onClick={resetGame}>다시하기</button>}
           </div>
         </div>
       </div>
-    </div>
+      <div className='Gugudan_Score'>
+        <div className='Gugudan_records'>
+          <h2>⭐게임 스코어⭐</h2>
+          {finalScores.sort((a, b) => b - a).slice(0, 5).map((score, index) => (
+            <div key={index} className='Gugudan_rank'>{index + 1}등: {score} 점</div>
+          ))}
+                </div>
+            </div>
+      </div>
   );
 };
 

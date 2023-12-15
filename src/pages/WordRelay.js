@@ -45,8 +45,8 @@ const WordRelay = () => {
             </Modal.Footer>
         </Modal>
       </div>
-      <div className='Phone'>
-        <div className='Display'>
+      <div className='WordRelay_Phone'>
+        <div className='WordRelay_Display'>
           <div className='WordGame'>
             <div>{word}</div>
               <form onSubmit={onSubmitForm}>
