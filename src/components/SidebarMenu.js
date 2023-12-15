@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import "../styles/SidebarMenu.css";
 import ToggleLogo from './ToggleLogo';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import HomeIcon from '@mui/icons-material/Home';
 import GugudanLogo from './GugudanLogo';
 import WordRelayLogo from './WordRelayLogo';
@@ -42,7 +43,7 @@ const SidebarMenu = () => {
             },
           }}
         >
-          <MenuItem className="menuItem" icon=<ToggleLogo/> onClick={() => setCollapsed(!collapsed)}></MenuItem><br/><br/>
+          <MenuItem className="menuItem" icon={collapsed?<ToggleLogo/>:<MenuOpenIcon style={{width: 50, height: 50}}/>} onClick={()=>setCollapsed(!collapsed)}></MenuItem><br/><br/>
           <MenuItem className="menuItem" icon={<HomeIcon style={{width: 40, height: 40}}/>} active={selected === "home"} onClick={()=>setSelected("home")} component={<Link to="/home" />}> {"Home"}</MenuItem>
           <MenuItem className="menuItem" icon=<GugudanLogo/> active={selected === "gugudan"} onClick={()=>setSelected("gugudan")} component={<Link to="/gugudan" />}> {"구구단"}<Link to="/gugudan" /></MenuItem>
           <MenuItem className="menuItem" icon=<WordRelayLogo/> active={selected === "wordRelay"} onClick={()=>setSelected("wordRelay")} component={<Link to="/wordRelay" />}> 끝말잇기</MenuItem>
