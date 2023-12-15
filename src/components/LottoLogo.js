@@ -1,4 +1,4 @@
-import Lotto from "../assets/lotto.png";
+import Lotto from "../assets/Lotto.png";
 
 const LottoLogo = () => {
     return(

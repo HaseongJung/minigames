@@ -1,4 +1,4 @@
-import Quiz from "../assets/quiz.png";
+import Quiz from "../assets/Quiz.png";
 
 const QuizLogo = () => {
     return(

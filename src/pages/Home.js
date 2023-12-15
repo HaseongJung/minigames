@@ -1,12 +1,12 @@
 import '../styles/Home.css';
 import baseball from '../assets/baseball.png';
 import gugudan from '../assets/gugudan.png';
-import Lotto from '../assets/lotto.png';
+import Lotto from '../assets/Lotto.png';
 import RSP from '../assets/RSP.png';
 import Tictactoe from '../assets/tictactoe.png';
 import WordRelay from '../assets/W.png';  
 import OneToFifty from '../assets/OneToFifty.png';
-import Quiz from '../assets/quiz.png';
+import Quiz from '../assets/Quiz.png';
 import timer from '../assets/timer.png';
 import { NavLink } from 'react-router-dom';
 
