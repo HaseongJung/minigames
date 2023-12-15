@@ -32,3 +32,9 @@
   padding: 20px;
   font-weight: bold;
 }
+
+#screen {
+  text-align: center;
+  padding-top: 120px;
+  font-size: 3em;
+}
