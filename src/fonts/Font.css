@@ -1,8 +1,4 @@
 @font-face {
-    font-family: "BMHANA";
-    src: url('BMHANNA_11yrs.otf') format("opentype");
-}
-
-body {
-	font-family: 'BMHANA' !important;
+    font-family: "BH HANNA 11yrs old";
+    src: url('./BMHANNA_11yrs.otf') format("opentype");
 }
